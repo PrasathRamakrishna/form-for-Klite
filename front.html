@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="script.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+    <form id="inputForm">
+        <h3 class="head">Stock Accessories_New/Edit Form</h3>
+        <div class="first">
+            <div class="column1">
+                Item code(Auto number)<span style="color: red;">*</span>:
+                <input type="text" id="auto" name="auto" class="column2" required/>
+            </div>
+            <div>
+                Item code(manual):
+                <input type="text" id="manual" name="manual" class="manual" />
+            </div><br>
+        </div><br>
+        <div class="second">
+            <div class="column1">
+                Item image<br>
+                <label for="imageUpload"></label>
+                <input type="file" id="itemimage">
+            </div>
+            <div>
+                Item label image<br>
+                <label for="imageUpload1"></label>
+                <input type="file" id="itemlabel"><br>
+                <div>Entry By</div>
+            </div>
+            <div>
+                Drawing<br>
+                <label for="imageUpload2"></label>
+                <input type="file" id="drawing">
+                <div>Entry DT</div>
+            </div>
+            <div>
+                Supplier Datasheet<br>
+                <label for="imageUpload3"></label>
+                <input type="file" id="datasheet">
+                <div>update By</div>
+            </div>
+            <div>
+                Supplier Datasheet1<br>
+                <label for="imageUpload4"></label>
+                <input type="file" id="datasheet1">
+                <div>update DT</div>
+            </div>
+        </div>
+        <div class="third">
+            <div class="column1">
+                Status<br>
+                <select name="status" id="status">
+                    <option>ACTIVE</option>
+                </select>
+            </div>
+        </div><br>
+        <div class="four">
+            <div class="column1">
+                Item Name<span style="color: red;">*</span><br>
+                <input type="text" id="name">
+            </div>
+            <div>
+                Product Type<br>
+                <select name="type" id="type" class="type">
+                    <option>components</option>
+                </select>
+            </div>
+            <div>
+                Product ID<br>
+                <input type="text" id="productid">
+            </div>
+        </div><br>
+        <div class="five">
+            <div class="column1">
+                BOM<br>
+                <select name="bom" id="bom" class="wide-five">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                Product cat<br>
+                <select name="cat" id="cat" class="wide-five1 ">
+                    <option></option>
+                    <option>item1</option>
+                    <option>item2</option>
+                    <option>item3</option>
+                    <option>item4</option>
+                </select>
+            </div>
+            <div>
+                Product Sub Category<br>
+                <select name="subcat" id="subcat" class="wide-five1 ">
+                    <option></option>
+                    <option>value1</option>
+                    <option>value2</option>
+                    <option>value3</option>
+                    <option>value4</option>
+                </select>
+            </div>
+            <div>
+                Product Sub Category1<br>
+                <select name="subcat1" id="subcat1" class="wide-five1 ">
+                    <option></option>
+                </select>
+            </div>
+        </div><br>
+        <div class="six">
+            <div class="column1">
+                Item Group<br>
+                <select name="group" id="group" class="wide-five1">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                Item Source<br>
+                <select name="source" id="source" class="wide-five1 ">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                Stores<br>
+                <select name="stores" id="stores" class="wide-five1 ">
+                    <option></option>
+                    <option>1013-2F-Driver</option>
+                    <option>1013-3F-Driver</option>
+                    <option>1013-4F-Driver</option>
+                    <option>1013-5F-Driver</option>
+                    <option>1013-6F-Driver</option>
+                </select>
+            </div>
+            <div>
+                Stores-location<br>
+                <select name="storeloc" id="storeloc" class="wide-five1 ">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                Used in Floor<br>
+                <select name="floor" id="floor" class="wide-five1 ">
+                    <option></option>
+                </select>
+            </div>
+        </div><br>
+        <div class="seven">
+            <div class="column1">
+                Item Description<span style="color: red;">*</span><br>
+                <input type="text" id="descrpt">
+            </div>
+            <div>
+                Item Colour<br>
+                <input type="text" id="colour">
+            </div>
+            <div>
+                Item Weight<br>
+                <input type="text" id="weight">
+            </div>
+            <div>
+                Item Dimension(in mm)<br>
+                <input type="text" id="dimension">
+            </div>
+        </div><br>
+        <div class="eight">
+            <div class="column1">
+                Wattage<br>
+                <input type="text" id="wattage">
+            </div>
+            <div>
+                Wattage1<br>
+                <input type="text" id="wattage1" class="wide-eight">
+            </div>
+            <div>
+                Wattage2<br>
+                <input type="text" id="wattage2" class="wide-eight">
+            </div>
+            <div>
+                Output Voltage<br>
+                <input type="text" id="voltage" class="wide-eight">
+            </div>
+            <div>
+                Type<br>
+                <select name="outtype" id="outtype" class="wide-five">
+                        <option></option>
+                    </select>
+            </div>
+            <div>
+                Output Voltage1<br>
+                <input type="text" id="voltage1">
+            </div>
+            <div>
+                Output Voltage2<br>
+                <input type="text" id="voltage2">
+            </div>
+        </div><br>
+        <div class="nine">
+            <div class="column1">
+                O/P Current<br>
+                <input type="text" id="current" class="wide-eight">
+            </div>
+            <div>
+                O/P current unit<br>
+                <select name="outunit" id="outunit" class="wide-five">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                O/P Current1<br>
+                <input type="text" id="current1">
+            </div>
+            <div>
+                O/P Current2<br>
+                <input type="text" id="current2">
+            </div>
+            <div>
+                IP<br>
+                <input type="text" id="ip" class="wide-eight">
+            </div>
+            <div>
+                CRI<br>
+                <input type="text" id="cri" class="wide-eight">
+            </div>
+            <div>
+                Beam Angle<br>
+                <input type="text" id="beam">
+            </div>
+        </div><br>
+        <div class="ten">
+            <div class="column1">
+                Alt Item Code<br>
+                <input type="text" id="alt">
+            </div>
+            <div>
+                Alternate Item<br>
+                <input type="text" id="alt1">
+            </div>
+            <div>
+                Alternate Item<br>
+                <input type="text" id="alt2">
+            </div>
+            <div>
+                Quantity<br>
+                <input type="text" id="quantity" class="wide-eight">
+            </div>
+            <div>
+                Unit<br>
+                <select name="unit1" id="unit1" class="wide-five">
+                    <option>No.</option>
+                </select>
+            </div>
+            <div>
+                Min Qty<br>
+                <input type="text" value=0>
+            </div>
+        </div><br>
+
+        <div class="eleven">
+            <div class="column1">
+                Product Warehouse<br>
+                <select name="type" id="type" class="type">
+                    <option></option>
+                    <option>chennai</option>
+                    <option>covai</option>
+                    <option>madurai</option>
+                    <option>delhi</option>
+                </select>
+            </div>
+            <div>
+                Drawing ID<br>
+                <input type="text">
+            </div>
+            <div>
+                <input type="button" value="Select Drawing">
+            </div>
+            <div>
+                Item Make<br>
+                <input type="text" id="make">
+            </div>
+            <div>
+                Item Reference No<br>
+                <input type="text" id="ref">
+            </div>
+        </div>
+        <div class="twelve">
+            <div class="column1">
+                Display order<br>
+                <input type="text" id="order" value=0>
+            </div>
+            <div>
+                Used in Product Name<br>
+                <input type="text" id="proname">
+            </div>
+            <div>
+                Used in Product ID<br>
+                <input type="text" id="proid">
+            </div>
+            <div>
+                Drawing No.<br>
+                <input type="text" id="drawingno">
+            </div>
+            <div>
+                Product Set<br>
+                <input type="text" id="drawingset">
+            </div>
+        </div>
+        <div class="thirteenth">
+            <div class="column1">
+                category<br>
+                <select name="cate" id="cate" class="wide-five1 ">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                Sub Category<br>
+                <select name="subcategory1" id="subcategory1" class="wide-five1 ">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                Sub Category 1<br>
+                <select name="subcategory1" id="subcategory1" class="wide-five1 ">
+                    <option></option>
+                </select>
+            </div>
+            <div>
+                Item Material<br>
+                <input type="text" id="itemmaterial">
+            </div>
+            <div>
+                Item Type<br>
+                <input type="text" id="itemtype">
+            </div>
+        </div>
+        <div class="fourteen">
+            <div class="column1">
+                Price<br>
+                <input type="text" id="price">
+            </div>
+            <div>
+                Currency<br>
+                <select name="unit1" id="unit1" class="wide-five">
+                    <option>INR</option>
+                </select>
+            </div>
+            <div>
+                Exchange Rate<br>
+                <input type="text" value=0.00 class="wide-five1">
+            </div>
+            <div>
+                Binning No.<br>
+                <input type="text" id="big">
+            </div>
+            <div>
+                Dot Code<br>
+                <input type="text" id="dot">
+            </div>
+            <div>
+                CC Price 2024<br>
+                <input type="text" id="cc">
+            </div>
+        </div>
+        <div>
+            <div>
+                ITem Remarks<span style="color: red;">*</span><br>
+                <input type="text" id="remark">
+            </div>
+        </div>
+        <div>
+            <div>
+                Remarks<span style="color: red;">*</span><br>
+                <input type="text" id="remarks">
+            </div>
+        </div>
+        <div class="save">
+           
+
+
+
+
+<button type="button" id="submitBtn">Save</button>
+<button type="button" id="updateBtn">Update</button>
+
+    </form>
+
+</body>
+<script src="script.js"></script>
+
+</html>
